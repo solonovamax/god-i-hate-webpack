@@ -1,0 +1,274 @@
+// $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
+@import "bootstrap/scss/bootstrap";
+//noinspection CssUnknownTarget
+// @import "@fortawesome/fontawesome-free/scss/fontawesome";
+// //noinspection CssUnknownTarget
+// @import "@fortawesome/fontawesome-free/scss/brands";
+// //noinspection CssUnknownTarget
+// @import "@fortawesome/fontawesome-free/scss/regular";
+// //noinspection CssUnknownTarget
+// @import "@fortawesome/fontawesome-free/scss/solid";
+
+$highlight-colour: rgb(225, 225, 225);
+$primary-colour: rgb(200, 200, 200);
+$secondary-colour: rgb(67, 67, 67);
+$link-colour: rgb(58, 170, 100);
+$active-link-colour: rgb(46, 230, 113);
+$bg-colour: rgb(25, 25, 28);
+$body-colour: rgb(30, 33, 36);
+
+* {
+    font-family: "Fira Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+
+    color: $primary-colour;
+    background: $bg-colour;
+
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 24px;
+
+    transition: 1s;
+}
+
+a {
+    color: $link-colour;
+
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        color: $active-link-colour;
+    }
+}
+
+.header {
+    //padding: 40px 0;
+    padding: 40px;
+    //margin: 20px;
+    color: $highlight-colour;
+
+    border-top-color: $body-colour;
+    background: $body-colour scroll;
+    background-clip: border-box;
+
+    .profile-image {
+        //noinspection CssUnknownTarget
+        //background: url("assets/img/profile-picture@100x100.png") no-repeat;
+        //height: 1000px;
+        //width: 1000px;
+        align-content: center;
+        //margin-right: 20px;
+        margin: 20px;
+        height: 80%;
+        width: 80%;
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .profile-content {
+        //margin-left: -40px;
+        align-content: start;
+
+        .name {
+            color: $highlight-colour;
+            font-size: 52px;
+            margin-bottom: 24px;
+            margin-top: 30px;
+            //height: 32px;
+
+            .divider {
+                color: $primary-colour;
+                font-size: 30px;
+
+                @include media-breakpoint-down(md) {
+                    color: transparent;
+                }
+            }
+
+            .pronouns {
+                color: $primary-colour;
+                font-size: 18px;
+            }
+        }
+
+        .desc {
+            color: $primary-colour;
+            font-family: "Fira Sans", arial, sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            max-width: 100%;
+            //display: flex;
+            display: inline-flex;
+            align-items: center;
+
+            a {
+                background: #2e3238;
+                color: $primary-colour;
+                width: 48px;
+                height: 48px;
+                display: block;
+                border-radius: 50%;
+                background-clip: padding-box;
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 24pt;
+                line-height: 48px;
+
+                &:hover {
+                    background: $link-colour;
+                    color: $highlight-colour;
+                }
+            }
+        }
+    }
+}
+
+.main-content {
+    .container {
+        max-width: 960px;
+    }
+}
+
+.section {
+    margin-bottom: 30px;
+
+    background: $body-colour;
+    color: $primary-colour;
+    padding: 30px;
+
+    .heading {
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 24px;
+    }
+
+    .content {
+        .more-link {
+            i {
+                margin-right: 5px;
+                font-size: 14px;
+                position: relative;
+                top: -2px;
+            }
+        }
+    }
+
+    .about {
+
+    }
+
+    .projects {
+        //.content {
+        //    display: flex;
+        //    flex-wrap: wrap;
+        //
+        //    .col-md-6 {
+        //        flex-direction: column;
+        //    }
+        //}
+        //.content {
+        //    div {
+        //        margin: 16px;
+        //    }
+        //}
+
+        .project {
+            padding: 16px;
+
+            .project-card {
+                .project-card-title {
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    margin-bottom: 0.5rem;
+                    margin-top: 0;
+                }
+
+                background: rgba(255, 255, 255, 0.05);
+                color: $primary-colour;
+                transition: transform 0.3s, box-shadow 0.3s;
+
+                height: 100%;
+
+                &:hover {
+                    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.175) !important;
+                    transform: translateY(-4px);
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+            }
+        }
+    }
+}
+
+.progress {
+    transform-origin: left;
+
+    & > * {
+        transform: scaleX(0);
+    }
+}
+
+.progress-bar-animation {
+    @extend .progress;
+
+    & > * {
+        animation: progress 1.5s ease-in-out forwards;
+    }
+}
+
+@keyframes progress {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    to {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.footer {
+    //padding: 40px 0;
+    padding: 20px;
+    //margin: 20px;
+    color: $highlight-colour;
+
+    border-top-color: $body-colour;
+    background: $body-colour scroll;
+    background-clip: border-box;
+
+    .footer-icon {
+        height: 24px;
+        width: 24px;
+
+        //transition: all 0.4s ease-in-out;
+        //
+        //&:hover {
+        //    color: $active-link-colour;
+        //}
+    }
+}
+
+.icon {
+    margin: 4px 4px 16px 4px;
+    line-height: 32px;
+
+    height: 32px;
+    width: 32px;
+    filter: invert(100%) brightness(115%) contrast(57%);
+}
